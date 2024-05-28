@@ -1,0 +1,21 @@
+header {
+	display: flex;
+	border: 1px solid transparent;
+	border-color: antiquewhite;
+
+	justify-content: space-between;
+	align-items: center;
+
+  p {
+    font-size: large;
+    font-weight: 800;
+  }
+}
+
+div {
+	padding-inline: 0.5rem;
+}
+
+a {
+	padding-inline: 0.5rem;
+}
