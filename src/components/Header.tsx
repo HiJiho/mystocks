@@ -1,13 +1,13 @@
-import '../styles/Header.module.css';
+import styles from '../styles/Header.module.css';
 
 const Header = () => {
 	return (
-		<header>
+		<header className={styles.header}>
 			<div>
-				<p>My Stocks</p>
+				<p className={styles.p}>My Stocks</p>
 			</div>
 			<div>
-				<nav>
+				<nav className={styles.nav}>
 					<a href='/login'>Login</a>
 					<a href='/signup'>Sign Up</a>
 				</nav>

@@ -1,21 +1,21 @@
-header {
+.header {
 	display: flex;
 	border: 1px solid transparent;
 	border-color: antiquewhite;
 
 	justify-content: space-between;
 	align-items: center;
-
-  p {
-    font-size: large;
-    font-weight: 800;
-  }
 }
 
-div {
+.p {
+	font-size: large;
+	font-weight: 800;
+}
+
+.header div {
 	padding-inline: 0.5rem;
 }
 
-a {
+.nav a {
 	padding-inline: 0.5rem;
 }
