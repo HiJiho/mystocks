@@ -1,7 +1,14 @@
 // import reactLogo from '../assets/react.svg';
+import { useNavigate } from '@tanstack/react-router';
 import styles from '../styles/Main.module.css';
 
 const Main = () => {
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		navigate({ to: '/start' });
+	};
+
 	return (
 		<main className={styles.main}>
 			<section className={styles.section}>
@@ -12,7 +19,9 @@ const Main = () => {
 					<p>한 번의 입력으로 귀찮은 포트폴리오 관리는 끝</p>
 				</div>
 				<div className='button'>
-					<button>시작하기</button>
+					<button type='button' onClick={handleClick}>
+						시작하기
+					</button>
 				</div>
 			</section>
 			<section className={styles.section}>
