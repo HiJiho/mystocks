@@ -1,5 +1,5 @@
 // import reactLogo from '../assets/react.svg';
-import { Link, useNavigate } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 import styles from '../styles/Main.module.css';
 
 const Main = () => {
