@@ -1,12 +1,12 @@
 // import reactLogo from '../assets/react.svg';
-import { useNavigate } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 import styles from '../styles/Main.module.css';
 
 const Main = () => {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		navigate({ to: '/start' });
+		navigate({ to: '/enter-name' });
 	};
 
 	return (
