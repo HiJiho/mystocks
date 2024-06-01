@@ -1,7 +1,7 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router';
 import { useAtom } from 'jotai';
 import type React from 'react';
-import { userNameAtom } from '../atoms';
+import { formDataAtom } from '../atoms';
 import styles from '../styles/EnterName.module.css';
 
 export const Route = createLazyFileRoute('/enter-name')({
@@ -9,17 +9,25 @@ export const Route = createLazyFileRoute('/enter-name')({
 });
 
 function EnterName() {
-	const [userName, setUserName] = useAtom(userNameAtom);
+	const [formData, setFormData] = useAtom(formDataAtom);
 	const navigate = useNavigate();
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setUserName(e.target.value);
+		setFormData((prevFormData) => ({
+			...prevFormData,
+			uname: e.target.value,
+		}));
 	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log('Submitted Name:', userName);
-		navigate({ to: '/enter-info' });
+		console.log('Submitted Name:', formData.uname);
+		if (formData.uname === '') {
+			//todo
+			alert('이름을 입력해주세요!');
+		} else {
+			navigate({ to: '/enter-info' });
+		}
 	};
 
 	return (
@@ -34,7 +42,7 @@ function EnterName() {
 					<input
 						className={styles.input}
 						placeholder='이름'
-						value={userName}
+						value={formData.uname}
 						onChange={handleChange}
 					/>
 					<button className={styles.button} type='submit'>

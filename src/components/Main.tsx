@@ -18,8 +18,8 @@ const Main = () => {
 				<div>
 					<p>한 번의 입력으로 귀찮은 포트폴리오 관리는 끝</p>
 				</div>
-				<div className='button'>
-					<button type='button' onClick={handleClick}>
+				<div>
+					<button className={styles.button} type='button' onClick={handleClick}>
 						시작하기
 					</button>
 				</div>

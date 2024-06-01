@@ -22,8 +22,30 @@
 	font-weight: 900;
 }
 
-.button {
+/* .button {
 	margin: 0;
+} */
+.button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	/* font-size: 1em; */
+	font-size: large;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(82, 144, 247);
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	width: 100%;
+	/* height: 100%; */
+}
+.button:hover {
+	background-color: rgb(54, 108, 236);
+}
+.button:focus,
+.button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
 }
 
 .img {
