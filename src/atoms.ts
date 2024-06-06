@@ -8,7 +8,7 @@ export interface StockData {
 	stockName: string;
 	purchasePrice: string;
 	quantity: number | null;
-	purchaseDate: number | null;
+	purchaseDate: Date | null;
 }
 
 export const userNameAtom = atom<string>('');

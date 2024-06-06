@@ -1,5 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { useAtom } from 'jotai';
+import DatePicker from 'react-datepicker';
 import { formDataAtom, stockDataAtom } from '../atoms';
 import styles from '../styles/EnterInfo.module.css';
 
@@ -34,6 +35,13 @@ function EnterInfo() {
 		});
 	};
 
+	const handleDateChange = (date: Date | null) => {
+		setStockData((prevStockData) => ({
+			...prevStockData,
+			purchaseDate: date,
+		}));
+	};
+
 	return (
 		<main className={styles.main}>
 			<section className={styles.section}>
@@ -53,6 +61,21 @@ function EnterInfo() {
 						value={stockData.stockName}
 						onChange={handleInputChange}
 					/>
+					{/* <input
+						className={styles.input}
+						placeholder='매수일'
+						name='purchaseDate'
+						value={
+							stockData.purchaseDate !== null ? stockData.purchaseDate : ''
+						}
+						onChange={handleInputChange}
+					/> */}
+					<DatePicker
+						selected={stockData.purchaseDate}
+						onChange={handleDateChange}
+						placeholderText='매수일'
+						dateFormat='yyyy-MM-dd'
+					/>
 					<input
 						className={styles.input}
 						placeholder='매수가격'
@@ -65,15 +88,6 @@ function EnterInfo() {
 						placeholder='수량'
 						name='quantity'
 						value={stockData.quantity !== null ? stockData.quantity : ''}
-						onChange={handleInputChange}
-					/>
-					<input
-						className={styles.input}
-						placeholder='매수일'
-						name='purchaseDate'
-						value={
-							stockData.purchaseDate !== null ? stockData.purchaseDate : ''
-						}
 						onChange={handleInputChange}
 					/>
 					<button className={styles.button} type='submit'>
